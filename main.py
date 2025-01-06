@@ -1,12 +1,10 @@
 import tkinter as tk
+from tkinter import ttk
+from datetime import datetime
 
-window = tk.Tk()
-window.title("Hello world")
-window.geometry("300x300")
+# Tkinter setup
+root = tk.Tk()
+root.title("Fintrack: Personal Finance Tracker")
+root.configure(bg="#f0f2f5")  
 
-hello = tk.Label(text="Hello world!")
-hello.pack()
-button = tk.Button(text="Click me!")
-button.pack()
-
-tk.mainloop()
+root.mainloop()
