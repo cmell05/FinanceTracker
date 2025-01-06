@@ -64,3 +64,19 @@ description_entry.grid(row=4, column=1)
 add_btn = tk.Button(form_frame, text="Add Transaction")
 add_btn.grid(row=5, column=0, columnspan=2, pady=15)
 
+
+# Transaction History Table
+transaction_frame = tk.Frame(root, bg="#f0f2f5", padx=20, pady=20)
+transaction_frame.pack()
+
+transaction_table = ttk.Treeview(transaction_frame, columns=("Date", "Type", "Category", "Amount", "Description"), show="headings")
+transaction_table.heading("Date", text="Date")
+transaction_table.heading("Type", text="Type")
+transaction_table.heading("Category", text="Category")
+transaction_table.heading("Amount", text="Amount")
+transaction_table.heading("Description", text="Description")
+transaction_table.pack()
+
+root.mainloop() 
+
+
