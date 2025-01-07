@@ -7,7 +7,50 @@ root = tk.Tk()
 root.title("Fintrack: Personal Finance Tracker")
 root.configure(bg="#f0f2f5")  
 
-root.mainloop()
+transactions = []
+
+#Add transaction method
+def add_transaction():
+    date = date_entry.get()
+    transaction_type = type_var.get()
+    category = category_var.get()
+    amount = float(amount_entry.get())
+    description = description_entry.get()
+
+    # Add new transaction to the transactions list
+    transactions.append({
+        "Date": date,
+        "Type": transaction_type,
+        "Category": category,
+        "Amount": amount,
+        "Description": description
+    })
+
+    # Update the transaction table to show the new transaction
+    update_table()
+
+    clear_form()
+
+def update_table():
+    # Clear existing rows in the table
+    for row in transaction_table.get_children():
+        transaction_table.delete(row)
+
+    # Insert each transaction in the list as a new row in the table
+    for txn in transactions:
+        transaction_table.insert("", "end", values=(txn["Date"], txn["Type"], txn["Category"], txn["Amount"], txn["Description"]))
+
+
+def clear_form():
+    #Reset data to today's date
+    data_entry.set_date(datetime.now())
+    # Clear the amount and description fields
+    amount_entry.delete(0, tk.END)
+    description_entry.delete(0, tk.END)
+
+    # Recalculate totals (income, expense, balance)
+    calculate_totals()
+
 
 # Dashboard
 dashboard_frame = tk.Frame(root, bg="#f0f2f5", pady=20)
@@ -77,39 +120,9 @@ transaction_table.heading("Amount", text="Amount")
 transaction_table.heading("Description", text="Description")
 transaction_table.pack()
 
-#Add transaction method
-def add_transaction():
-    date = date_entry.get()
-    transaction_type = type_var.get()
-    category = category_var.get()
-    amount = float(amount_entry.get())
-    description = description_entry.get()
-
-    # Add new transaction to the transactions list
-    transactions.append({
-        "Date": date,
-        "Type": transaction_type,
-        "Category": category,
-        "Amount": amount,
-        "Description": description
-    })
-
-    # Update the transaction table to show the new transaction
-    update_table()
-
-    clear_form()
-
-    calculate_totals()
 
 
-def update_table():
-    # Clear existing rows in the table
-    for row in transaction_table.get_children():
-        transaction_table.delete(row)
 
-    # Insert each transaction in the list as a new row in the table
-    for txn in transactions:
-        transaction_table.insert("", "end", values=(txn["Date"], txn["Type"], txn["Category"], txn["Amount"], txn["Description"]))
     
 
 
