@@ -9,6 +9,22 @@ root.configure(bg="#f0f2f5")
 
 transactions = []
 
+#Add calculate total balance method 
+
+def calculate_totals():
+    # Calculate total income and total expenses from the transactions list
+    total_income = sum(t["Amount"] for t in transactions if t["Type"] == "Income")
+    total_expense = sum(t["Amount"] for t in transactions if t["Type"] == "Expense")
+
+    # Calculate current balance (income - expense)
+    current_balance = total_income - total_expense
+
+    # Update the labels with calculated totals
+    income_label.config(text=f"Total Income: ${total_income:.2f}")
+    expense_label.config(text=f"Total Expenses: ${total_expense:.2f}")
+    balance_label.config(text=f"Current Balance: ${current_balance:.2f}")
+
+
 #Add transaction method
 def add_transaction():
     date = date_entry.get()
@@ -50,6 +66,7 @@ def clear_form():
 
     # Recalculate totals (income, expense, balance)
     calculate_totals()
+
 
 
 # Dashboard
