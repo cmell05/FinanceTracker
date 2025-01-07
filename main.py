@@ -100,6 +100,21 @@ def add_transaction():
     clear_form()
 
     calculate_totals()
+
+
+def update_table():
+    # Clear existing rows in the table
+    for row in transaction_table.get_children():
+        transaction_table.delete(row)
+
+    # Insert each transaction in the list as a new row in the table
+    for txn in transactions:
+        transaction_table.insert("", "end", values=(txn["Date"], txn["Type"], txn["Category"], txn["Amount"], txn["Description"]))
+    
+
+
+
+
                         
 
 root.mainloop() 
