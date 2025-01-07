@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from tkcalendar import DateEntry
 from datetime import datetime
 
 # Tkinter setup
@@ -67,6 +68,11 @@ def clear_form():
     # Recalculate totals (income, expense, balance)
     calculate_totals()
 
+# Add Transaction Button
+add_btn = tk.Button(form_frame, text="Add Transaction", command=add_transaction, 
+                    bg="#1a73e8", fg="white", font=('Helvetica', 10, 'bold'),
+                    relief='flat', padx=20, pady=10)
+add_btn.grid(row=5, column=0, columnspan=2, pady=15)
 
 
 # Dashboard
@@ -120,11 +126,6 @@ tk.Label(form_frame, text="Description:").grid(row=4, column=0)
 description_entry = tk.Entry(form_frame)
 description_entry.grid(row=4, column=1)
 
-# Add Transaction Button
-add_btn = tk.Button(form_frame, text="Add Transaction")
-add_btn.grid(row=5, column=0, columnspan=2, pady=15)
-
-
 # Transaction History Table
 transaction_frame = tk.Frame(root, bg="#f0f2f5", padx=20, pady=20)
 transaction_frame.pack()
@@ -138,14 +139,6 @@ transaction_table.heading("Description", text="Description")
 transaction_table.pack()
 
 
-
-
-    
-
-
-
-
-                        
 
 root.mainloop() 
 
