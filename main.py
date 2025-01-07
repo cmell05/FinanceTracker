@@ -77,6 +77,33 @@ transaction_table.heading("Amount", text="Amount")
 transaction_table.heading("Description", text="Description")
 transaction_table.pack()
 
+#Add transaction method
+def add_transaction():
+    date = date_entry.get()
+    transaction_type = type_var.get()
+    category = category_var.get()
+    amount = float(amount_entry.get())
+    description = description_entry.get()
+
+    # Add new transaction to the transactions list
+    transactions.append({
+        "Date": date,
+        "Type": transaction_type,
+        "Category": category,
+        "Amount": amount,
+        "Description": description
+    })
+
+    # Update the transaction table to show the new transaction
+    update_table()
+
+    clear_form()
+
+    calculate_totals()
+                        
+
 root.mainloop() 
+
+
 
 
