@@ -91,7 +91,6 @@ balance_label = tk.Label(dashboard_frame, text="Current Balance: $0.00", bg="#f0
                         font=('Helvetica', 14, 'bold'), pady=10)
 balance_label.pack()
 
-
 # Add Transaction Form
 form_frame = tk.Frame(root, bg="#f0f2f5", padx=20, pady=20)
 form_frame.pack(fill='x')
@@ -99,6 +98,12 @@ form_frame.pack(fill='x')
 expense_categories = ["Food", "Rent", "Clothes", "Transport", "Household", "Phone", "Grocery", "Other"]
 income_categories = ["Allowance", "Salary", "Bonus", "Petty Cash", "Awards", "Other"]
 category_var = tk.StringVar()
+
+def update_categories(*args):
+    current_type = type_var.get()
+    current_categories = income_categories if current_type == "Income" else expense_categories
+    category_dropdown['values'] = current_categories
+    category_var.set(current_categories[0])
 
 
 # Transaction Type (Income/Expense)
