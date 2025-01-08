@@ -95,6 +95,11 @@ balance_label.pack()
 # Add Transaction Form
 form_frame = tk.Frame(root, bg="#f0f2f5", padx=20, pady=20)
 form_frame.pack(fill='x')
+# Add predefined categories for the dropdown
+expense_categories = ["Food", "Rent", "Clothes", "Transport", "Household", "Phone", "Grocery", "Other"]
+income_categories = ["Allowance", "Salary", "Bonus", "Petty Cash", "Awards", "Other"]
+category_var = tk.StringVar()
+
 
 # Transaction Type (Income/Expense)
 tk.Label(form_frame, text="Type:").grid(row=0, column=0)
