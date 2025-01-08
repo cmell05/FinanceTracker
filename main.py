@@ -157,6 +157,13 @@ transaction_table.heading("Amount", text="Amount")
 transaction_table.heading("Description", text="Description")
 transaction_table.pack()
 
+delete_btn = tk.Button(transaction_frame, text="Delete Selected", command=delete_transaction,
+      bg=COLORS["error"], fg="white", font=('Helvetica', 10),
+      relief='flat', padx=15, pady=8)
+delete_btn.pack(pady=10)
+
+update_table()
+
 
 
 
