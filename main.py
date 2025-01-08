@@ -3,10 +3,8 @@ from tkinter import ttk
 from tkcalendar import DateEntry
 from datetime import datetime
 
-# Tkinter setup
-root = tk.Tk()
-root.title("Fintrack: Personal Finance Tracker")
-root.configure(bg="#f0f2f5")  
+
+
 
 transactions = []
 
@@ -45,8 +43,8 @@ def add_transaction():
 
     # Update the transaction table to show the new transaction
     update_table()
-
-    clear_form()
+    confirmation_label.config(text="Transaction Added Successfully!", fg="green")
+    calculate_totals()
 
 def update_table():
     # Clear existing rows in the table
@@ -64,9 +62,15 @@ def clear_form():
     # Clear the amount and description fields
     amount_entry.delete(0, tk.END)
     description_entry.delete(0, tk.END)
-
     # Recalculate totals (income, expense, balance)
     calculate_totals()
+
+def delete_transaction():
+    selected_item = transaction_table.selection()
+    if selected_item:
+        idx = transaction_table.index(selected_item)
+        transactions.pop(idx)
+        update_table()
 
 # Add Transaction Button
 add_btn = tk.Button(form_frame, text="Add Transaction", command=add_transaction, 
@@ -78,7 +82,6 @@ add_btn.grid(row=5, column=0, columnspan=2, pady=15)
 # Dashboard
 dashboard_frame = tk.Frame(root, bg="#f0f2f5", pady=20)
 dashboard_frame.pack(fill='x')  # Fill horizontally
-
 income_label = tk.Label(dashboard_frame, text="Total Income: $0.00", bg="#f0f2f5", fg="#34a853", 
                        font=('Helvetica', 12, 'bold'), pady=5)
 income_label.pack()
@@ -105,6 +108,10 @@ def update_categories(*args):
     category_dropdown['values'] = current_categories
     category_var.set(current_categories[0])
 
+# Tkinter setup
+root = tk.Tk()
+root.title("Fintrack: Personal Finance Tracker")
+root.configure(bg="#f0f2f5") 
 
 # Transaction Type (Income/Expense)
 tk.Label(form_frame, text="Type:").grid(row=0, column=0)
@@ -140,6 +147,8 @@ description_entry.grid(row=4, column=1)
 transaction_frame = tk.Frame(root, bg="#f0f2f5", padx=20, pady=20)
 transaction_frame.pack()
 
+
+
 transaction_table = ttk.Treeview(transaction_frame, columns=("Date", "Type", "Category", "Amount", "Description"), show="headings")
 transaction_table.heading("Date", text="Date")
 transaction_table.heading("Type", text="Type")
@@ -147,6 +156,8 @@ transaction_table.heading("Category", text="Category")
 transaction_table.heading("Amount", text="Amount")
 transaction_table.heading("Description", text="Description")
 transaction_table.pack()
+
+
 
 
 
