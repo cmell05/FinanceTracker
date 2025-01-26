@@ -54,10 +54,10 @@ python main.py
 
 ## 🛠️ Built With
 
-Python: Core programming language for the application.
-Tkinter: GUI framework for the user interface.
-tkcalendar: For date entry widget to select and display dates.
-datetime: To handle date and time-related operations.
+1.Python: Core programming language for the application.
+2.Tkinter: GUI framework for the user interface.
+3.tkcalendar: For date entry widget to select and display dates.
+4.datetime: To handle date and time-related operations.
 
 ---
     
@@ -71,8 +71,8 @@ datetime: To handle date and time-related operations.
 5. Description: Provide a description for the transaction.
 Click the "Add Transaction" button to save it.
 
-**View Transaction History**
+**View Transaction History**:
 Transactions are displayed in a table format showing the date, type (income or expense), category, amount, and description. You can also delete a transaction if necessary.
 
-**Balance Calculation**
+**Balance Calculation**:
 The current balance is automatically updated after each transaction is added. The app will show the total income, total expenses, and the current balance.
