@@ -1,4 +1,4 @@
-# FinanceTracker: Personal Finance Tracker
+# FinanceTracker
 
 FinanceTracker is a personal finance tracking application built with Tkinter for a graphical user interface (GUI). It helps users manage their finances by tracking income, expenses, and providing an overview of their balance. Users can add, view, and delete transactions, and the app dynamically calculates the total income, total expenses, and current balance.
 
@@ -16,12 +16,12 @@ FinanceTracker is a personal finance tracking application built with Tkinter for
 ## 📁 Folder Structure
 financetracker/
 │
-├── .gitignore         # Git ignore file to exclude unnecessary files from version control
-├── .replit            # Replit configuration file (if using Replit platform)
-├── generated-icon.png # Application icon image file
-├── main.py            # Main Python file containing the Tkinter GUI and business logic
-├── poetry.lock        # Poetry lock file (if using Poetry for dependency management)
-└── pyproject.toml     # Poetry configuration file (if using Poetry for dependency management)
+├── .gitignore         
+├── .replit            
+├── generated-icon.png 
+├── main.py            
+├── poetry.lock       
+└── pyproject.toml     
 
 
 ---
