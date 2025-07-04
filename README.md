@@ -21,7 +21,6 @@ FinanceTracker is a personal finance tracking application built with Tkinter for
 2. **Install Required Libraries** :
    - Install the required Python libraries using pip: **pip install tkinter tkcalendar**
 
----
 
 ### **Setup**
 
@@ -45,7 +44,7 @@ python main.py
 
 ---
     
-📖 How to Use
+## 📖 How to Use
 
 **1. Add Transaction**
 - Transaction Type: Select between Income or Expense.
