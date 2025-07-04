@@ -38,25 +38,25 @@ python main.py
 
 ## 🛠️ Built With
 
-1.Python: Core programming language for the application.
-2.Tkinter: GUI framework for the user interface.
-3.tkcalendar: For date entry widget to select and display dates.
-4.datetime: To handle date and time-related operations.
+1. Python: Core programming language for the application.
+2. Tkinter: GUI framework for the user interface.
+3. tkcalendar: For date entry widget to select and display dates.
+4. datetime: To handle date and time-related operations.
 
 ---
     
 📖 How to Use
 
-**Add Transaction**
-1. Transaction Type: Select between Income or Expense.
-2. Date: Choose the date for the transaction using the date picker.
-3. Category: Select the relevant category based on the transaction type.
-4. Amount: Enter the transaction amount.
-5. Description: Provide a description for the transaction.
-Click the "Add Transaction" button to save it.
+**1. Add Transaction**
+- Transaction Type: Select between Income or Expense.
+- Date: Choose the date for the transaction using the date picker.
+- Category: Select the relevant category based on the transaction type.
+- Amount: Enter the transaction amount.
+- Description: Provide a description for the transaction.
+- Click the "Add Transaction" button to save it.
 
-**View Transaction History**:
-Transactions are displayed in a table format showing the date, type (income or expense), category, amount, and description. You can also delete a transaction if necessary.
+**2. View Transaction History**:
+- Transactions are displayed in a table format showing the date, type (income or expense), category, amount, and description. You can also delete a transaction if necessary.
 
-**Balance Calculation**:
-The current balance is automatically updated after each transaction is added. The app will show the total income, total expenses, and the current balance.
+**3. Balance Calculation**:
+- The current balance is automatically updated after each transaction is added. The app will show the total income, total expenses, and the current balance.
